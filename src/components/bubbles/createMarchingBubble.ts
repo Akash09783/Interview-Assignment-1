@@ -576,8 +576,7 @@ export function createMarchingBubble(
       marchingCubes.addBall(bx, by, 0.5, hoverStrength * e * norm, hoverSubtract, new THREE.Color(0xffffff));
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (marchingCubes as any).update();
+    (marchingCubes as unknown as { update: () => void }).update();
     renderer.render(scene, camera);
 
     scheduleFrame();

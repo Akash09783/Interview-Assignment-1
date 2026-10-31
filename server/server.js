@@ -62,23 +62,23 @@ app.get('/api/products', (req, res) => {
       {
         id: 'reset-serum',
         name: 'Reset Serum',
-        price: 65.0,
-        step: 2,
-        stepName: 'Repair',
-      },
-      {
-        id: 'hydra-nutrition-stick',
-        name: 'Hydra-Nutrition Stick',
-        price: 55.0,
-        step: 3,
-        stepName: 'Nourish',
-      },
-      {
-        id: 'barrier-recovery-cream',
-        name: 'Barrier Recovery Cream',
         price: 75.0,
+        step: 2,
+        stepName: 'Activate',
+      },
+      {
+        id: 'lash-and-eye-conditioner',
+        name: 'Lash and Eye Conditioner',
+        price: 65.0,
+        step: 3,
+        stepName: 'Maintain',
+      },
+      {
+        id: 'hydra-nutrition-essence',
+        name: 'Hydra-Nutrition Essence',
+        price: 65.0,
         step: 4,
-        stepName: 'Shield',
+        stepName: 'Recovery',
       },
     ],
   });

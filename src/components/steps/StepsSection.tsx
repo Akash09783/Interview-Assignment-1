@@ -51,16 +51,22 @@ export default function StepsSection() {
   return (
     <section id="steps" className="steps relative bg-white overflow-clip pt-28 md:pt-40">
       {/* Background Graphic Overlays matching Stem Beauty */}
-      <img
-        src="/assets/bg1.png"
-        alt=""
-        className="steps-bg1 absolute right-0 top-[-300px] w-full scale-150 pointer-events-none select-none opacity-40"
-      />
-      <img
-        src="/assets/bg2.png"
-        alt=""
-        className="steps-bg2 absolute left-0 bottom-[200px] w-full scale-125 pointer-events-none select-none opacity-40"
-      />
+      <div className="absolute right-0 top-[-300px] w-full h-[600px] pointer-events-none select-none opacity-40">
+        <Image
+          src="/assets/bg1.png"
+          alt=""
+          fill
+          className="object-contain object-right-top scale-150"
+        />
+      </div>
+      <div className="absolute left-0 bottom-[200px] w-full h-[600px] pointer-events-none select-none opacity-40">
+        <Image
+          src="/assets/bg2.png"
+          alt=""
+          fill
+          className="object-contain object-left-bottom scale-125"
+        />
+      </div>
 
       {/* Section Title matching Stem Beauty */}
       <div className="container max-w-[1720px] mx-auto px-6 md:px-12 mb-20 md:mb-32 relative z-10">
