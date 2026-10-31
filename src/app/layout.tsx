@@ -4,6 +4,7 @@ import LenisProvider from '@/components/ui/LenisProvider';
 import { CartProvider } from '@/context/CartContext';
 import Header from '@/components/layout/Header';
 import CartDrawer from '@/components/cart/CartDrawer';
+import PageLoader from '@/components/ui/PageLoader';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://stembeauty.com'),
@@ -39,6 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white text-[#202020] antialiased selection:bg-[#d08c81] selection:text-white">
+        {/* Authentic Stem Beauty Reload Intro Loader with 3D Coalescing Bubble & Percentage Counter */}
+        <PageLoader />
+
         <LenisProvider>
           <CartProvider>
             {/* Navigation Header */}

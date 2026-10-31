@@ -89,7 +89,8 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 │   │   ├── steps/
 │   │   │   └── StepsSection.tsx             # 4 essential steps sticky scroll section
 │   │   └── ui/
-│   │       └── LenisProvider.tsx            # Smooth inertial scroll provider
+│   │       ├── LenisProvider.tsx            # Smooth inertial scroll provider
+│   │       └── PageLoader.tsx               # Authentic 3D coalescing bubble preloader with percentage counter
 │   ├── context/
 │   │   └── CartContext.tsx                  # Global cart state & persistence
 │   ├── lib/
