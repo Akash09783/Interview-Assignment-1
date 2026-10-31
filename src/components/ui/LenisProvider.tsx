@@ -43,3 +43,4 @@ export default function LenisProvider({ children }: LenisProviderProps) {
 
   return <>{children}</>;
 }
+

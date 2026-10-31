@@ -27,3 +27,4 @@ const SubscriberSchema = new Schema<ISubscriber>({
 });
 
 export default mongoose.models.Subscriber || mongoose.model<ISubscriber>('Subscriber', SubscriberSchema);
+

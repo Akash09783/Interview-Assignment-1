@@ -188,3 +188,4 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 ## 📄 License & Attribution
 - Built for technical evaluation purposes.
 - Reference Design & Trademarks: **Stem Beauty** ([stembeauty.com](https://stembeauty.com)).
+

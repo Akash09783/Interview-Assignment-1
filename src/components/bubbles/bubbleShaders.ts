@@ -157,3 +157,4 @@ export const imageQuadFragmentShader = `
     gl_FragColor = vec4(texel.rgb * uTint, alpha);
   }
 `;
+

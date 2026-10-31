@@ -66,3 +66,4 @@ export const PRODUCTS_DATA: Product[] = [
     keyIngredients: ['Biomimetic Lipid Shield', 'Ectoin', 'Beta-Glucan'],
   },
 ];
+
