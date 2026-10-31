@@ -12,7 +12,7 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 ### 1. High-Precision Homepage Recreation
 - **Authentic Typography & Visual Styling**: Loaded with Stem Beauty's official `Degular Demo` (Regular, Thin, Medium) and `Metropolis` (Regular, Medium, Semi-Bold, Thin-Italic) typefaces, reproducing the editorial minimalism, neutral warm palette (`#EDE8E1`, `#D08C81`, `#141414`), and subtle border treatments.
 - **Cinematic Video Hero**: Autoplaying background video with parallax scrub (`hero-video.mp4`) and responsive typography.
-- **Interactive Collection Grid**: 4 featured products (*Hydra-Foam Cleanser*, *Reset Serum*, *Hydra-Nutrition Stick*, *Barrier Recovery Cream*) with dual-image hover cross-fade zoom and instant cart integration.
+- **Interactive Collection Grid**: 4 featured products (*Hydra-Foam Cleanser*, *Reset Serum*, *Lash and Eye Conditioner*, *Hydra-Nutrition Essence*) with dual-image hover cross-fade zoom and instant cart integration.
 - **Slide-Out Cart Drawer**: Full reactive cart context featuring free shipping threshold bar, quantity adjustments, item removal, and checkout actions.
 - **Mobile Responsive Architecture**: Fluid breakpoint handling across mobile, tablet, and ultra-wide displays with an animated hamburger drawer navigation.
 
@@ -75,6 +75,7 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 │   │   ├── bubbles/
 │   │   │   ├── bubbleShaders.ts             # Custom GLSL vertex & fragment shaders
 │   │   │   ├── createMarchingBubble.ts      # Three.js MarchingCubes WebGL engine
+│   │   │   ├── FloatingBubbles3D.tsx        # 3D Chromatic dispersion WebGL floating bubbles
 │   │   │   ├── PhilosophyBubbleCanvas.tsx   # Canvas 1: Coalescing metaballs + annotations
 │   │   │   ├── StepsStickyBubbleCanvas.tsx  # Canvas 2: Sticky 4-step ritual journey
 │   │   │   └── AmbientFloatingBubbles.tsx   # Ambient floating bubbles with click-to-pop

@@ -1,11 +1,11 @@
 export interface Product {
   id: string;
   name: string;
-  subtitle?: string;
+  subtitle: string;
   price: number;
   currency: string;
-  step?: number;
-  stepName?: string;
+  step: number;
+  stepName: string;
   images: string[];
   description: string;
   volume: string;
@@ -17,53 +17,56 @@ export const PRODUCTS_DATA: Product[] = [
     id: 'hydra-foam-cleanser',
     name: 'Hydra-Foam Cleanser',
     subtitle: 'HYDRA-FOAM CLEANSER',
-    price: 35.00,
+    price: 35.0,
     currency: 'USD',
     step: 1,
     stepName: 'Cleanse',
     images: ['/assets/Beauty_In_Stem_12_13.jpg', '/assets/Beauty_In_Stem_1.jpg'],
-    description: 'A recovery-first cleansing step that purifies while preserving the skin barrier from the very first contact. Leaves skin balanced, supple, and revitalized.',
+    description:
+      'A recovery-first cleansing step that purifies while preserving the skin barrier from the very first contact. Leaves your skin feeling clean and hydrated.',
     volume: '150ml / 5.1 fl oz',
-    keyIngredients: ['Salmon DNA (PDRN)', 'Centella Asiatica', 'Low-pH Surfactants'],
+    keyIngredients: ['PDRN Salmon DNA', 'Centella Asiatica', 'Gentle Amino Surfactants'],
   },
   {
     id: 'reset-serum',
     name: 'Reset Serum',
     subtitle: 'RESET SERUM',
-    price: 65.00,
+    price: 75.0,
     currency: 'USD',
     step: 2,
-    stepName: 'Repair',
+    stepName: 'Activate',
     images: ['/assets/Beauty_In_Stem_15.jpg', '/assets/Beauty_In_Stem_4.jpg'],
-    description: 'A potent multi-action peptide and cellular repair serum engineered to target environmental stress, restore elasticity, and accelerate tissue recovery.',
+    description:
+      'A targeted activation serum that stimulates the skin cells in regaining strength, density, and balance — preparing it for sustained resilience. Resulting in a more youthful, glowy texture.',
     volume: '50ml / 1.7 fl oz',
-    keyIngredients: ['Dual PDRN Concentrate', 'Epidermal Growth Factor', 'Niacinamide 5%'],
+    keyIngredients: ['Purified PDRN', 'Epidermal Growth Factor', 'Niacinamide'],
   },
   {
-    id: 'hydra-nutrition-stick',
-    name: 'Hydra-Nutrition Stick',
-    subtitle: 'HYDRA-NUTRITION',
-    price: 55.00,
-    currency: 'USD',
-    step: 3,
-    stepName: 'Nourish',
-    images: ['/assets/Beauty_In_Stem_16.jpg', '/assets/Beauty_In_Stem_2.jpg'],
-    description: 'Portable, multi-depth moisture nourishment in a solid balmy stick. Glides seamlessly over skin to instantly infuse salmon DNA, essential ceramides, and vital lipids.',
-    volume: '30g / 1.01 fl oz',
-    keyIngredients: ['PDRN Salmon DNA', 'Phytosterols', 'Multi-Ceramide Complex'],
-  },
-  {
-    id: 'barrier-recovery-cream',
-    name: 'Barrier Recovery Cream',
-    subtitle: 'BARRIER RECOVERY CREAM',
-    price: 75.00,
+    id: 'lash-and-eye-conditioner',
+    name: 'Lash and Eye Conditioner',
+    subtitle: 'EYE & LASH CONDITIONER',
+    price: 65.0,
     currency: 'USD',
     step: 4,
-    stepName: 'Shield',
+    stepName: 'Maintain',
+    images: ['/assets/Beauty_In_Stem_16.jpg', '/assets/Beauty_In_Stem_2.jpg'],
+    description:
+      'A multi-tasking eye fitness serum formulated to support the skin around the eyes and lashes, where is it most delicate. Eye skin and lashes will appears thicker over time, reducing dark areas and crepiness.',
+    volume: '30g / 1.01 fl oz',
+    keyIngredients: ['Salmon PDRN Peptide', 'Biotinoyl Tripeptide', 'Hyaluronic Acid'],
+  },
+  {
+    id: 'hydra-nutrition-essence',
+    name: 'Hydra-Nutrition Essence',
+    subtitle: 'HYDRA-NUTRITION ESSENCE',
+    price: 65.0,
+    currency: 'USD',
+    step: 3,
+    stepName: 'Recovery',
     images: ['/assets/Beauty_In_Stem_14.jpg', '/assets/803e3cd3c1410f61ee939257a7c88173.jpg'],
-    description: 'The final seal in the skin fitness system. Formulated to fortify lipid bilayers, trap essential moisture, and shield against oxidative stress.',
+    description:
+      'A barrier-training moisturiser designed to strengthen the skin\'s tolerance over time, reinforcing hydration, structure, and defensive function. This light milky formula leaves your skin brighter and well hydrated.',
     volume: '60ml / 2.0 fl oz',
-    keyIngredients: ['Biomimetic Lipid Shield', 'Ectoin', 'Beta-Glucan'],
+    keyIngredients: ['Ceramide NP', 'Phytosphingosine', 'PDRN Salmon Extract'],
   },
 ];
-

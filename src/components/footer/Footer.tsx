@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -31,7 +30,7 @@ export default function Footer() {
         setEmail('');
       } else {
         setStatus('error');
-        setMessage(data.error || 'Subscription failed. Please check your email.');
+        setMessage(data.error || 'Subscription failed.');
       }
     } catch {
       setStatus('error');
@@ -40,159 +39,129 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#141414] text-[#EDE8E1] pt-20 pb-12 overflow-hidden border-t border-white/10">
+    <footer className="footer bg-white text-[#202020] pt-20 pb-12 border-t border-[#e8e4e1]">
       <div className="max-w-[1720px] mx-auto px-6 md:px-12">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          {/* Left Column: Brand & Links */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
+        <div className="footer__wrapper grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#e8e4e1]">
+          {/* Left Column */}
+          <div className="footer-left lg:col-span-6 flex flex-col justify-between">
             <Link
               href="/"
-              className="relative w-48 sm:w-64 h-12 block filter invert brightness-150 mb-10"
+              className="footer-left__logo block w-48 sm:w-60 h-10 mb-8"
               aria-label="Beauty In Stem"
             >
               <Image
                 src="/assets/logo.png"
                 alt="Beauty In Stem"
-                fill
+                width={240}
+                height={40}
                 className="object-contain object-left"
               />
             </Link>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-[#EDE8E1]/40 font-mono mb-4">
-                  Navigation
-                </p>
-                <ul className="space-y-3 text-xs tracking-wider uppercase font-medium">
-                  <li>
-                    <a href="#science" className="link-animation text-[#EDE8E1]/80 hover:text-white">
-                      Science
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#philosophy" className="link-animation text-[#EDE8E1]/80 hover:text-white">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#collection" className="link-animation text-[#EDE8E1]/80 hover:text-white">
-                      Shop Ritual
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#steps" className="link-animation text-[#EDE8E1]/80 hover:text-white">
-                      The 4 Steps
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div className="footer-left__wrapper flex flex-col sm:flex-row gap-10 sm:gap-20">
+              <ul className="footer-left__links space-y-3 font-metropolis text-xs sm:text-sm uppercase tracking-wider">
+                <li>
+                  <a href="#science" className="link-animation text-[#202020]">
+                    Science
+                  </a>
+                </li>
+                <li>
+                  <a href="#philosophy" className="link-animation text-[#202020]">
+                    About us
+                  </a>
+                </li>
+                <li>
+                  <a href="#collection" className="link-animation text-[#202020]">
+                    Shop
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="link-animation text-[#202020]">
+                    Faq
+                  </a>
+                </li>
+              </ul>
 
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-[#EDE8E1]/40 font-mono mb-4">
-                  Follow Us
+              <div className="footer-left__socials font-metropolis">
+                <p className="text-xs uppercase tracking-widest text-[#4b4b4b] mb-3">
+                  FOLLOW US:
                 </p>
-                <ul className="space-y-3 text-xs tracking-wider uppercase font-medium">
-                  <li>
-                    <a
-                      href="https://www.instagram.com/beautyinstemofficial"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-animation link-animation--lined text-[#EDE8E1]/80 hover:text-white"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tiktok.com/@beautyinstemofficial"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-animation link-animation--lined text-[#EDE8E1]/80 hover:text-white"
-                    >
-                      TikTok
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="col-span-2 sm:col-span-1">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-[#EDE8E1]/40 font-mono mb-4">
-                  Formulation
-                </p>
-                <p className="text-xs text-[#EDE8E1]/60 font-metropolis leading-relaxed">
-                  Engineered with medical-grade PDRN Salmon DNA in Seoul, Korea. Cruelty-free & dermatologist tested.
-                </p>
+                <div className="flex flex-col space-y-2 text-xs uppercase tracking-wider font-medium">
+                  <a
+                    href="https://www.instagram.com/beautyinstemofficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-animation link-animation--lined text-[#202020]"
+                  >
+                    INSTAGRAM
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@beautyinstemofficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-animation link-animation--lined text-[#202020]"
+                  >
+                    TIKTOK
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Newsletter Subscription */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-stem-rose font-mono mb-2">
-                Stay Informed
-              </p>
-              <h3 className="font-degular text-2xl sm:text-3xl font-normal text-white mb-3">
-                Join the Skin Fitness Community
-              </h3>
-              <p className="text-xs text-[#EDE8E1]/70 leading-relaxed mb-6 font-metropolis max-w-md">
-                Receive private invitations to clinical formulation releases, dermatological research whitepapers, and exclusive launch offers.
-              </p>
+          {/* Right Column */}
+          <div className="footer-right lg:col-span-6 flex flex-col justify-between lg:pl-12">
+            <div className="footer-right__wrapper">
+              <h2 className="footer-right__title font-metropolis font-medium text-xl sm:text-2xl uppercase tracking-normal text-[#202020] mb-6">
+                SUBSCRIBE TO OUR NEWSLETTERS
+              </h2>
 
-              {/* Newsletter Form */}
-              <form onSubmit={handleSubmit} className="relative max-w-md">
-                <div className="flex items-center border-b border-white/30 focus-within:border-white transition-colors pb-2">
+              <form onSubmit={handleSubmit} className="contact-form max-w-md">
+                <div className="footer-right__submit flex items-center border-b border-[#202020] pb-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
                     required
-                    className="w-full bg-transparent text-sm text-white placeholder-white/40 focus:outline-none font-metropolis"
+                    className="w-full bg-transparent text-sm text-[#202020] placeholder-[#4b4b4b]/60 focus:outline-none font-metropolis"
                   />
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="p-2 text-white hover:text-stem-rose transition-colors disabled:opacity-50"
-                    aria-label="Subscribe"
+                    className="button border border-[#331b0f] text-[#202020] hover:bg-[#331b0f] hover:text-white text-xs uppercase tracking-widest px-6 py-2 transition-all flex-shrink-0 font-metropolis"
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <span>{status === 'loading' ? '...' : 'submit'}</span>
                   </button>
                 </div>
 
                 {message && (
-                  <div
-                    className={`mt-3 text-xs flex items-center gap-2 ${
-                      status === 'success' ? 'text-emerald-400' : 'text-rose-400'
+                  <p
+                    className={`mt-3 text-xs font-metropolis ${
+                      status === 'success' ? 'text-emerald-700' : 'text-rose-700'
                     }`}
                   >
-                    {status === 'success' && <CheckCircle2 className="w-3.5 h-3.5" />}
-                    <span>{message}</span>
-                  </div>
+                    {message}
+                  </p>
                 )}
               </form>
-            </div>
 
-            <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between text-xs text-[#EDE8E1]/50">
-              <span>Currency: USD ($)</span>
-              <span>Seoul &bull; New York</span>
+              <div className="footer-right__select mt-10 font-metropolis text-xs uppercase text-[#4b4b4b]">
+                <p className="inline-block mr-3">SHOP IN:</p>
+                <span className="font-semibold text-[#202020]">USD ($)</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Copyright & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#EDE8E1]/50 font-metropolis gap-4">
+        {/* Footer Bottom */}
+        <div className="footer-bottom pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#4b4b4b] font-metropolis gap-4">
           <p>&copy; {new Date().getFullYear()} Beauty In Stem Inc. All rights reserved.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-black transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-black transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Shipping & Returns
             </a>
           </div>
         </div>
@@ -200,4 +169,3 @@ export default function Footer() {
     </footer>
   );
 }
-

@@ -4,7 +4,7 @@ import LenisProvider from '@/components/ui/LenisProvider';
 import { CartProvider } from '@/context/CartContext';
 import Header from '@/components/layout/Header';
 import CartDrawer from '@/components/cart/CartDrawer';
-import AmbientFloatingBubbles from '@/components/bubbles/AmbientFloatingBubbles';
+import FloatingBubbles3D from '@/components/bubbles/FloatingBubbles3D';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://stembeauty.com'),
@@ -39,11 +39,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#EDE8E1] text-[#141414] antialiased selection:bg-stem-rose selection:text-white">
+      <body className="bg-white text-[#202020] antialiased selection:bg-[#d08c81] selection:text-white">
         <LenisProvider>
           <CartProvider>
-            {/* Ambient Floating Bubbles across the page */}
-            <AmbientFloatingBubbles />
+            {/* 3D WebGL Chromatic Dispersion Floating Bubbles */}
+            <FloatingBubbles3D />
 
             {/* Navigation Header */}
             <Header />
