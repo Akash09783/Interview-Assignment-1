@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Degular Demo';
+  src: url('/assets/DegularDemo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Degular Demo';
+  src: url('/assets/DegularDemo-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Degular Demo';
+  src: url('/assets/DegularDemo-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/Metropolis-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/Metropolis-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/Metropolis-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/Metropolis-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-degular: 'Degular Demo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-metropolis: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --bg-color: #EDE8E1;
+  --text-dark: #141414;
+  --accent-rose: #D08C81;
+}
+
+html {
+  font-family: var(--font-metropolis);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #EDE8E1;
+  color: #141414;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE8E1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BCB1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A99E91;
+}
+
+/* Link animation with animated underline */
+.link-animation {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link-animation::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.link-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link-animation--lined::after {
+  transform: scaleX(1);
+}
+
+.link-animation--lined:hover::after {
+  transform: scaleX(0);
+}
+
+/* Button aesthetics */
+.btn-stem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #141414;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-stem:hover {
+  background-color: #141414;
+  color: #FFFFFF;
+  border-color: #141414;
+}
+
+.btn-stem-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: #141414;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-stem-fill:hover {
+  background-color: #2F2D2A;
+  transform: translateY(-1px);
+}
+
+/* Card image zoom effect */
+.card-image-box {
+  overflow: hidden;
+  position: relative;
+  background-color: #E6E0D7;
+}
+
+.card-image-box img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+}
+
+.card-image-box:hover img.primary-img {
+  opacity: 0;
+}
+
+.card-image-box:hover img.hover-img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Big Title Typography */
+.big-title {
+  font-family: var(--font-degular);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* Glass & blur cards */
+.glass-panel {
+  background: rgba(237, 232, 225, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
