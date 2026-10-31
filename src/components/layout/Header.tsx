@@ -12,9 +12,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-black/5 transition-all">
-        <div className="w-full px-6 md:px-12 h-[68px] md:h-[76px] flex items-center justify-between relative">
-          {/* Left Navigation (Desktop) */}
+      <header className="fixed top-0 left-0 w-full z-40 bg-[#ffffffd1] backdrop-blur-md border-b border-[#e8e4e1]/60 transition-all">
+        <div className="w-full px-4 md:px-12 h-[54px] md:h-[76px] flex items-center justify-between relative">
+          {/* Left Navigation (Desktop Only) */}
           <nav
             className="hidden md:flex items-center space-x-12 flex-1 justify-start font-metropolis text-[14px] lg:text-[15px] tracking-[0.08em] uppercase text-[#202020]"
             aria-label="Main navigation"
@@ -30,10 +30,10 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Center Logo */}
+          {/* Logo: Aligned on the Left on Mobile, Centered on Desktop */}
           <Link
             href="/"
-            className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center w-[120px] md:w-[145px] h-[32px] md:h-[38px] transition-transform duration-300 hover:scale-[1.01]"
+            className="flex items-center shrink-0 w-[95px] md:w-[145px] h-[26px] md:h-[38px] md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 transition-transform duration-300 hover:scale-[1.01]"
             aria-label="Beauty In Stem"
           >
             <Image
@@ -42,11 +42,11 @@ export default function Header() {
               width={145}
               height={38}
               priority
-              className="object-contain h-full w-auto"
+              className="object-contain w-full h-full"
             />
           </Link>
 
-          {/* Right Navigation (Desktop) */}
+          {/* Right Navigation (Desktop Only) */}
           <nav
             className="hidden md:flex items-center space-x-12 flex-1 justify-end font-metropolis text-[14px] lg:text-[15px] tracking-[0.08em] uppercase text-[#202020]"
             aria-label="User navigation"
@@ -63,65 +63,53 @@ export default function Header() {
             </button>
           </nav>
 
-          {/* Mobile Actions */}
-          <div className="flex items-center space-x-5 md:hidden ml-auto">
-            <a href="#account" className="p-1" aria-label="Account">
+          {/* Mobile Actions: Account, Bag, Burger Menu (Matching Stem Beauty Mobile) */}
+          <div className="flex items-center gap-4 md:hidden ml-auto">
+            {/* Account Icon */}
+            <a
+              href="#account"
+              className="flex items-center justify-center p-1 text-[#331b0f]"
+              aria-label="Account"
+            >
               <Image
                 src="/assets/login.svg"
                 alt="Account"
-                width={22}
-                height={22}
-                className="w-5 h-5 opacity-90"
+                width={18}
+                height={18}
+                className="w-[18px] h-[18px]"
               />
             </a>
 
+            {/* Shopping Bag Icon (clean outline, no badge on mobile) */}
             <button
               onClick={openCart}
-              className="relative p-1"
+              className="flex items-center justify-center p-1 text-[#331b0f] cursor-pointer"
               aria-label="Shopping Cart"
             >
               <Image
                 src="/assets/bag.svg"
                 alt="Cart"
-                width={22}
-                height={22}
-                className="w-5 h-5 opacity-90"
+                width={18}
+                height={18}
+                className="w-[18px] h-[18px]"
               />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-stem-rose text-white text-[9px] flex items-center justify-center font-bold">
-                  {totalItems}
-                </span>
-              )}
             </button>
 
-            {/* Mobile Burger Button */}
+            {/* Authentic 3-Bar Burger Menu Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1 flex flex-col justify-center items-end gap-1.5 w-7 h-7"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="flex flex-col justify-between items-end w-[24px] h-[16px] p-0 border-0 bg-transparent cursor-pointer ml-1"
+              aria-label="Open navigation menu"
             >
-              <span
-                className={`w-6 h-[1.8px] bg-[#331b0f] transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span
-                className={`w-4 h-[1.8px] bg-[#331b0f] transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`w-6 h-[1.8px] bg-[#331b0f] transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
-              />
+              <span className="block h-[1.8px] bg-[#331b0f] w-full" />
+              <span className="block h-[1.8px] bg-[#331b0f] w-[60%]" />
+              <span className="block h-[1.8px] bg-[#331b0f] w-full" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Fullscreen Mobile Drawer Menu */}
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
