@@ -28,13 +28,7 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 - **Sticky Scroll Projection**: The bubble tracks viewport scroll progress through the 4 sequential ritual steps (*Cleanse*, *Repair*, *Nourish*, *Shield*).
 - **Smooth Trajectory Curves**: Moves along custom 3D coordinate trajectories with rotational tilt, sine wave velocity displacement, and fluid scatter.
 - **Internal Product Image Projections**: Quads mapped with circular soft-mask shaders cross-fade between product renders (`1.png`, `2.png`, `3.png`, `4.png`, `products-img.png`) within the refractive bubble interior.
-- **Ritual Completion Reveal**: Expands and pulses upon completion of step 4, revealing the floating **"SHOP THE 4-STEP RITUAL"** call-to-action button.
-
-#### C. Ambient Interactive Floating Bubbles (Canvas 2D / WebGL)
-- **Natural Buoyancy & Wobble**: Floating iridescent bubbles drifting softly upwards across the screen with natural sinusoidal harmonics.
-- **Cursor Repulsion & Elastic Float**: Fluid deflection when cursor comes within proximity of floating bubbles.
-- **Click-to-Pop Particle Bursts**: Clicking or tapping any bubble instantly triggers an evanescent micro-droplet burst animation.
-- **Accessibility & Controls**: Full support for `prefers-reduced-motion`, with an interactive density toggle widget (8 / 16 / 26 bubbles) and interactive/passive mode switcher.
+- **Ritual Completion Reveal**: Expands upon completion of step 4 into the 150dvh `.steps__expand` scroll zone, displaying all 4 products together within the giant bubble and revealing the authentic floating **"SHOP"** call-to-action button.
 
 ---
 
@@ -75,10 +69,8 @@ A high-fidelity, pixel-accurate recreation of the **Stem Beauty** homepage, feat
 │   │   ├── bubbles/
 │   │   │   ├── bubbleShaders.ts             # Custom GLSL vertex & fragment shaders
 │   │   │   ├── createMarchingBubble.ts      # Three.js MarchingCubes WebGL engine
-│   │   │   ├── FloatingBubbles3D.tsx        # 3D Chromatic dispersion WebGL floating bubbles
 │   │   │   ├── PhilosophyBubbleCanvas.tsx   # Canvas 1: Coalescing metaballs + annotations
-│   │   │   ├── StepsStickyBubbleCanvas.tsx  # Canvas 2: Sticky 4-step ritual journey
-│   │   │   └── AmbientFloatingBubbles.tsx   # Ambient floating bubbles with click-to-pop
+│   │   │   └── StepsStickyBubbleCanvas.tsx  # Canvas 2: Sticky 4-step ritual journey
 │   │   ├── cart/
 │   │   │   └── CartDrawer.tsx               # Slide-over cart drawer with threshold bar
 │   │   ├── collection/
